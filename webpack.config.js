@@ -6,7 +6,7 @@ const dist = path.resolve(__dirname, 'dist');
 
 module.exports = {
     entry: path.resolve(source, 'js', 'index.js'),
-
+    mode: "development",
     plugins: [
         new HtmlWebpackPlugin({
             inject: "body",
@@ -31,5 +31,10 @@ module.exports = {
         filename: "app.bundle.js",
         path: path.resolve(dist, 'js'),
         clean: true
+    },
+
+    devServer: {
+        open: true,
+        static: './'
     }
 }
